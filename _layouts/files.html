@@ -1,0 +1,51 @@
+---
+
+---
+{% capture QR %}
+{{-
+site.baseurl
+-}}/assets/qr-codes/{{-
+page.file | default: page.title | slugify
+-}}-qr.svg
+{% endcapture %}
+<!doctype html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="/assets/css/{{- page.categories -}}.css"
+      />
+    <meta charset="utf-8"></meta>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    {{ content }}
+    <div class="layer" id="above">
+      <h1>{{ page.title }}</h1>
+      <figure>
+	<img
+	  src={{ QR }}
+	  alt="{{ page.title }} QR code"
+	  style="width:auto;"
+	  >
+	<figcaption>
+	  <p>
+	    Scan this QR code with a 'phone to view the "{{
+	    page.title }}" video.
+	  </p>
+	</figcaption>
+      </figure>
+      <div class="buttons">
+	{% include button.html
+	id="document"
+	onclick="hide()"
+	icon=page.categories
+	%}
+      </div>
+    </div>
+    <script
+      src="{{ site.baseurl }}/assets/js/layer-toggle.js"
+      >
+    </script>
+  </body>
+</html>

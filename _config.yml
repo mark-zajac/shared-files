@@ -1,0 +1,15 @@
+title: Shared Files
+email: markzajac@hotmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Mark Zajac created this web site as a means of sharing files
+  with other people.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  mark-zajac
+
+exclude:
+   - .sass-cache/
+   - .jekyll-cache/
+   - Gemfile
+   - Gemfile.lock
+   - components

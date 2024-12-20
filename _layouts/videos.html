@@ -1,0 +1,54 @@
+---
+layout: files
+---
+<div class="layer" id="below">
+  <h1>{{ page.title }}</h1>
+  <figure
+    style="max-width: {{ page.max-width }}"
+    >
+    {% capture MP4 %}
+    {{-
+    site.baseurl
+    -}}/assets/{{-
+    page.categories
+    -}}/{{-
+    page.file | default: page.title | slugify
+    -}}.mp4
+    {% endcapture %}
+    {% capture WebM %}
+    {{ MP4 | replace: ".mp4", ".webm" }}
+    {% endcapture %}
+    <video
+      controls
+      muted
+      preload
+      >
+      <source
+	type="video/webm"
+	src={{ WebM }}
+	/>
+      <source
+	type="video/mp4"
+	src={{ MP4 }}
+	/>
+      Your browser does not support video playback.
+    </video>
+    <figcaption>
+      <p>
+	{{ content }}
+      </p>
+    </figcaption>
+  </figure>
+  <div class="buttons">
+    {% include button.html
+    id="show"
+    onclick="show()"
+    icon="qr"
+    %}
+    {% include download.html
+    url=MP4
+    id="show"
+    icon="download"
+    %}
+  </div>
+</div>
