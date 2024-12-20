@@ -9,7 +9,7 @@ github_username:  mark-zajac
 
 domain: my-site.github.io       # 
 url: https://my-site.github.io  # 
-baseurl: /shared-files/         # 
+baseurl: /shared-files         # 
 
 exclude:
    - .sass-cache/
