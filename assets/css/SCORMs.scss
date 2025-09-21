@@ -1,0 +1,45 @@
+---
+---
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    > .layer {
+	align-items: center;
+	background-color: white; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	&#below {
+	    height: 100%;
+	    width: 100%;
+	}
+	> figure {
+	    display: flex;
+	    flex: 0 1 auto;
+	    flex-direction: column;
+	    margin: 0;
+	    padding: 0;
+	    > picture, video {
+		flex: 0 1 auto;
+		max-width: 100%;
+		height: auto;
+	    }
+	    > figcaption {
+		flex: 0 1 auto;
+	    }
+	    .loading {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+	    }
+	}
+    }
+}
+
+
