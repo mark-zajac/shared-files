@@ -1,0 +1,56 @@
+---
+
+---
+
+<!doctype html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ site.baseurl }}/assets/css/{{- page.categories -}}.css"
+      />
+    <meta charset="utf-8"></meta>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <div class="layer" id="below">
+      <h1>{{ page.title }}</h1>
+      <figure
+	style="max-width: 800px"
+	>
+	{% capture IMAGE %}
+	url("{{-
+	site.baseurl
+	-}}/assets/{{-
+	page.categories
+	-}}/Loading.png")
+	{% endcapture %}
+	{% capture INDEX %}
+	{{-
+	site.baseurl
+	-}}/assets/{{-
+	page.categories
+	-}}/{{-
+	page.file | default: page.title | slugify
+	-}}/index.html
+	{% endcapture %}	
+	<div
+	  class="loading"
+	  style='background-image: {{ IMAGE }}; '>
+	  <iframe
+	    height="525px"
+	    src={{ INDEX }}
+	    width="800px">
+	  </iframe>
+	</div>
+	<figcaption>
+	  <div>
+	  <p>
+	    {{ content }}
+	  </p>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+  </body>
+</html>
